@@ -8,7 +8,7 @@
     <meta name="keywords" content="404 page">
     <meta name="author" content="Piotr Bartela, Adrian Marciniak">
 
-    <title id="title">FileShare :: 404 - Strona nie znaleziona</title>
+    <title id="title">FileShare :: Strona logowania</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -20,6 +20,7 @@
     <script src="/js/uniscale-alert.js"></script>
     <script src="/js/AnimatedBackground.js"></script>
     <script src="/js/cookies_alert.js"></script>
+    <script src="/js/Login.js"></script>
 
 </head>
 
@@ -52,8 +53,9 @@
 
     <!-- Site content -->
     <div class="container">
-        <h1>404 - Strona nie znaleziona!</h1>
-        <p>Strona o takim adresie nie istnieje.</p>
+        <div class="keypad-holder p-t p-b text-xs-center">
+            <canvas class="login keypad" id="keypad"></canvas>
+        </div>
     </div>
 
     <!-- Cookies alert module -->

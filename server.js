@@ -3,6 +3,7 @@
 var express = require("express");
 var session = require("express-session");
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var app = express();
 var terminal = require("./terminal");
 
@@ -27,6 +28,14 @@ app.use(session({
 ///////////////////////////////////////////////////
 // Assign cookies parser for express:
 app.use(cookieParser());
+
+///////////////////////////////////////////////////
+// Parse body application/x-www-form-urlencoded:
+app.use(bodyParser.urlencoded({ extended: false }))
+
+///////////////////////////////////////////////////
+// Parse body application/json:
+app.use(bodyParser.json())
 
 
 ///////////////////////////////////////////////////

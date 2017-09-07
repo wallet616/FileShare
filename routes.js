@@ -1,4 +1,8 @@
+"use strict";
+
 const error_page = require("./sites/error_page/404_page");
+const login_page = require("./sites/login/login_page");
+const panel_page = require("./sites/panel/panel_page");
 const cookies_alert = require("./modules/cookies_alert/cookies_alert");
 
 module.exports = function(app) {
@@ -17,10 +21,22 @@ module.exports = function(app) {
     });
 
 
+    ///////////////////////////////////////////////////
+    // Login page & ajax:
+    app.get("/login", login_page.handle);
+    app.post("/ajax/login", login_page.ajax);
 
 
     ///////////////////////////////////////////////////
-    // Ajax:
+    // Panel page & ajax:
+    app.get("/panel", panel_page.handle);
+    app.post("/ajax/panel", panel_page.ajax);
+
+
+
+
+    ///////////////////////////////////////////////////
+    // Cookies alert:
     app.post("/ajax/cookies_alert", cookies_alert.ajax);
 
 
