@@ -1,0 +1,65 @@
+@import "./uniscale.scss";
+/////////////////////////////////////////////////////////
+// Loading Animation:
+.LoadingAnimation {
+    margin: 5px auto;
+}
+
+/////////////////////////////////////////////////////////
+// Hide:
+.hide {
+    display: none;
+}
+
+/////////////////////////////////////////////////////////
+// Footer:
+.footer-space {
+    display: block;
+    flex-grow: 1;
+    width: 100%;
+}
+
+footer {
+    line-height: 1.55;
+    font-size: 0.8em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    margin-top: 1em;
+    width: 100%;
+    .copyright-company {
+        font-size: 0.8em;
+    }
+    .copyright-author {
+        font-size: 0.8em;
+    }
+}
+
+/////////////////////////////////////////////////////////
+// Cookies:
+.cookies-alert {
+    position: fixed;
+    z-index: 20;
+    bottom: 0em;
+    width: 100%;
+    background: $bg-primary;
+    transition: bottom 0.7s ease;
+    &.dismiss {
+        bottom: -100%;
+    }
+    h5 {
+        background: none;
+    }
+}
+
+/////////////////////////////////////////////////////////
+// Header:
+.logo {
+    max-width: 250px;
+}
+
+.logo-description {
+    font-size: 0.8em;
+    letter-spacing: 0.25em;
+    color: #f7f7f7;
+    min-height: 1em;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="File Share 404 page">
+    <meta name="keywords" content="404 page">
+    <meta name="author" content="Piotr Bartela, Adrian Marciniak">
+
+    <title id="title">FileShare :: 404 - Strona nie znaleziona</title>
+
+    <!-- CSS -->
+    <link rel='stylesheet' type='text/css' href='/font-awesome-4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' type='text/css' href='/css/global.min.css'>
+
+
+    <!-- JS -->
+    <script src='/js/jquery-3.2.1.min.js'></script>
+    <script src='/js/uniscale-alert.js'></script>
+    <script src='/js/AnimatedBackground.js'></script>
+    <script src='/js/cookies_alert.js'></script>
+
+</head>
+
+<body id="body" class="row flex-xs-direction-column left-xs">
+
+    <div id="animated-background-hook"></div>
+
+    <div class="alerts-box">
+        <div class="container">
+            <div class="row flex-xs-direction-column" id="alerts-hook">
+            </div>
+        </div>
+    </div>
+
+    <nav class="width-100">
+        <div class="container">
+            <div class="row middle-xs center-xs flex-xs-direction-column">
+                <div class="col-xs-12 col-m-4 col-l-4 col-xl-3">
+                    <img class="logo" src="/img/logo-200x200.png" />
+                </div>
+                <div class="logo-description col-xs-12 text-xs-center">
+                    File Share
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class='container'>
+        <h1>404 - Strona nie znaleziona!</h1>
+        <p>Strona o takim adresie nie istnieje.</p>
+    </div>
+    {cookies_alert}
+    <div class="footer-space col-max"></div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-m-6 copyright-company text-xs-center text-m-left">
+                    <p>© 2017 FileShare, all rights reserved.</p>
+                </div>
+                <div class="col-xs-12 col-m-6 copyright-author text-xs-center text-m-right">
+                    <p>Authors <a href="http://piotrbartela.pl">Piotr Bartela</a>, Adrian Marciniak</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

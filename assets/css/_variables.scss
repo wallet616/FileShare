@@ -1,0 +1,42 @@
+/////////////////////////////////////////////////////
+// Sizes:
+// XS - [0, inf.) - Default for all.
+// S  - [375, inf.)
+// M  - [768, inf.)
+// L  - [992, inf.)
+// XL - [1200, inf.)
+$screen-xs-min: 0px;
+$screen-s-min: 375px;
+$screen-m-min: 768px;
+$screen-l-min: 1024px;
+$screen-xl-min: 1440px;
+$screen-sizes: ("xs": $screen-xs-min, "s": $screen-s-min, "m": $screen-m-min, "l": $screen-l-min, "xl": $screen-xl-min);
+/////////////////////////////////////////////////////
+// Colors:
+// Fonts 
+$font-primary: rgb(230, 230, 230);
+$font-secondary: rgb(255, 255, 255);
+// Links
+$link-primary: rgb(255, 255, 255);
+$link-hover:rgb(50, 50, 50);
+$link-underline: rgb(220, 220, 220);
+// Backgrounds
+$bg-primary: rgb(10, 10, 10);
+$bg-secondary: rgb(40, 40, 40);
+// Info, Succes, Warning, Danger, Default - buttons, alerts, inputs
+$forms-font-size: 0.75em;
+$color-default: rgb(240, 240, 240);
+$color-info: rgb(0, 100, 255);
+$color-succes: rgb(20, 180, 95);
+$color-warning: rgb(252, 136, 10);
+$color-danger: rgb(226, 0, 49);
+$color-mix: rgb(10, 10, 10);
+$color-font-hover: rgb(20, 20, 20);
+// Buttons, alerts
+$color-bg-opacity: 0.1;
+// Inputs
+$color-bg-input-opacity: 0.05;
+// Hovers
+$hover-bg-opacity: 0.12;
+// Margins
+$margin-bottom-default: 0.3em;
