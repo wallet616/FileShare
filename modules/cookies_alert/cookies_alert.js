@@ -3,7 +3,8 @@
 const fs = require("fs");
 const cookie = require("cookie");
 
-module.exports.handle = function(req, res) {
+
+module.exports.ajax = function(req, res) {
     var response = {};
     response.status = "OK";
 
@@ -14,4 +15,17 @@ module.exports.handle = function(req, res) {
     }));
 
     res.send(response);
+}
+
+
+module.exports.get = function(req, res) {
+    var source;
+
+    if (req.cookies.cookies_accepted) {
+        source = "";
+    } else {
+        source = fs.readFileSync(__dirname + "/" + "cookies_alert.html", "utf8");
+    }
+
+    return source;
 }

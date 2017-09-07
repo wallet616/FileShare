@@ -1,14 +1,18 @@
 const error_page = require("./sites/error_page/404_page");
-const cookies_alert = require("./sites/cookies_alert/cookies_alert");
+const cookies_alert = require("./modules/cookies_alert/cookies_alert");
 
 module.exports = function(app) {
 
     ///////////////////////////////////////////////////
     // Home page:
     app.get("/", function(req, res) {
+        // Tak się ustawia sesje:
         req.session.s = "tak";
+
+        // Tak się nadaje odpowiedź do użytkownika:
         res.send("home page");
 
+        // A to zwykły debug.
         console.log(req.session.s);
     });
 
@@ -17,9 +21,7 @@ module.exports = function(app) {
 
     ///////////////////////////////////////////////////
     // Ajax:
-    app.post("/ajax/cookies_alert", function(req, res) {
-        cookies_alert.handle(req, res);
-    });
+    app.post("/ajax/cookies_alert", cookies_alert.ajax);
 
 
 

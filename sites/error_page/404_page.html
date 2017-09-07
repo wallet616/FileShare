@@ -25,15 +25,18 @@
 
 <body id="body" class="row flex-xs-direction-column left-xs">
 
+    <!-- Animated background -->
     <div id="animated-background-hook"></div>
 
-    <div class="alerts-box">
+    <!-- Box for alerts -->
+    <div class="alerts-box width-100">
         <div class="container">
             <div class="row flex-xs-direction-column" id="alerts-hook">
             </div>
         </div>
     </div>
 
+    <!-- Top Menu -->
     <nav class="width-100">
         <div class="container">
             <div class="row middle-xs center-xs flex-xs-direction-column">
@@ -46,25 +49,20 @@
             </div>
         </div>
     </nav>
+
+    <!-- Site content -->
     <div class='container'>
         <h1>404 - Strona nie znaleziona!</h1>
         <p>Strona o takim adresie nie istnieje.</p>
     </div>
-    {cookies_alert}
-    <div class="footer-space col-max"></div>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-m-6 copyright-company text-xs-center text-m-left">
-                    <p>© 2017 FileShare, all rights reserved.</p>
-                </div>
-                <div class="col-xs-12 col-m-6 copyright-author text-xs-center text-m-right">
-                    <p>Authors <a href="http://piotrbartela.pl">Piotr Bartela</a>, Adrian Marciniak</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
+    <!-- Cookies alert module -->
+    {cookies_alert}
+    <!-- End of: Cookies alert module -->
+
+    <!-- Footer module -->
+    {footer}
+    <!-- End of: Footer -->
 </body>
 
 </html>
