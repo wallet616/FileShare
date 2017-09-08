@@ -3,6 +3,7 @@
 const error_page = require("./sites/error_page/404_page");
 const login_page = require("./sites/login/login_page");
 const panel_page = require("./sites/panel/panel_page");
+const download_page = require("./sites/download/download");
 const cookies_alert = require("./modules/cookies_alert/cookies_alert");
 
 module.exports = function(app) {
@@ -31,6 +32,12 @@ module.exports = function(app) {
     // Panel page & ajax:
     app.get("/panel", panel_page.handle);
     app.post("/ajax/panel", panel_page.ajax);
+
+
+    ///////////////////////////////////////////////////
+    // Download page & ajax:
+    app.get("/download", download_page.handle);
+    app.post("/ajax/download", download_page.ajax);
 
 
 

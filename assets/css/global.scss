@@ -55,6 +55,9 @@ footer {
 // Header:
 .logo {
     max-width: 250px;
+    &.download {
+        max-width: 100px;
+    }
 }
 
 .logo-description {
@@ -62,4 +65,16 @@ footer {
     letter-spacing: 0.25em;
     color: #f7f7f7;
     min-height: 1em;
+}
+
+/////////////////////////////////////////////////////////
+// Download:
+.file-name {
+    //@extend .panel;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.download-space {
+    @extend .footer-space;
 }

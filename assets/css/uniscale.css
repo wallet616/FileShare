@@ -35,7 +35,7 @@ body {
 
 .focus, .btn:focus, .input:focus {
   outline: none;
-  box-shadow: 0em 0em 1em rgba(240, 240, 240, 0.4); }
+  box-shadow: 0em 0em 1em rgba(255, 255, 255, 0.4); }
 
 a {
   color: #f8f8f8;
@@ -61,6 +61,10 @@ a {
     color: #323232; }
     a:active::after, a:hover::after {
       height: 100%; }
+
+img {
+  width: 100%;
+  height: auto; }
 
 p {
   display: block;
@@ -810,7 +814,7 @@ h6,
   position: relative;
   z-index: 1;
   background-color: #282828;
-  border: 1px solid #ababab;
+  border: 1px solid #b5b5b5;
   margin-bottom: 1em; }
 
 .panel-borderless {
@@ -830,7 +834,6 @@ h6,
     width: 15em;
     background-color: rgba(0, 0, 0, 0.9);
     color: #d2d2d2;
-    text-align: center;
     font-size: 0.8em;
     transform: scale(0, 0);
     transition: transform 0.15s; }
@@ -869,7 +872,7 @@ h6,
   position: relative;
   z-index: 1;
   background-color: #0d0d0d;
-  border: 1px solid #ababab;
+  border: 1px solid #b5b5b5;
   margin-bottom: 1em; }
   .alert .alert-icon {
     font-size: 3em;
@@ -921,9 +924,9 @@ h6,
   position: relative;
   text-shadow: none;
   z-index: 2;
-  background: rgba(240, 240, 240, 0.1);
-  border: 1px solid #ababab;
-  color: #ababab;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #b5b5b5;
+  color: #b5b5b5;
   margin-bottom: 0.3em;
   transition: color 0.4s; }
   .btn::before {
@@ -933,7 +936,7 @@ h6,
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ababab;
+    background: #b5b5b5;
     z-index: -1;
     opacity: 0;
     transform: scale3d(0.7, 1, 1);
@@ -983,10 +986,10 @@ h6,
   font-size: 0.75em;
   padding: 0.4em 0.6em 0.4em 0.6em;
   position: relative;
-  background: rgba(240, 240, 240, 0.05);
-  border: 1px solid #ababab;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #b5b5b5;
   text-shadow: none;
-  color: #ababab;
+  color: #b5b5b5;
   margin-bottom: 0.3em; }
   .input.input-info {
     background: rgba(0, 100, 255, 0.05);
@@ -1008,10 +1011,10 @@ h6,
   padding: 0.37em 0.6em 0.4em 0.6em;
   position: relative;
   overflow: hidden;
-  background: rgba(240, 240, 240, 0.1);
-  border: 1px solid #ababab;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #b5b5b5;
   border-right: none;
-  color: #ababab;
+  color: #b5b5b5;
   margin-bottom: 0.3em; }
   .input-addon.input-addon-info {
     color: #0349b5;
