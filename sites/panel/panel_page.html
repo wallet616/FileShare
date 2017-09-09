@@ -82,25 +82,71 @@
             <hr class="width-100">
 
             <div class="table table-stripped width-100">
-                <div class="row nowrap-xs middle-xs">
-                    <div class="col-xs-6 col-m-6 col-l-5 padding">
-                        Naprawde długa nazwa jakiegoś pliku.jpg
+
+
+                <div class="row">
+                    <div class="row nowrap-xs middle-xs">
+                        <div class="col-xs-6 col-m-6 col-l-5 padding">
+                            Naprawde długa nazwa jakiegoś pliku.jpg
+                        </div>
+                        <div class="hide-before-m col-m-2 col-l-2 padding text-xs-right">
+                            2MB
+                        </div>
+                        <div class="col-xs-3 col-m-2 col-l-2 padding text-xs-right">
+                            2017.09.09
+                        </div>
+                        <div class="col-xs-3 col-m-2 col-l-3 padding text-xs-right">
+                            <button class="btn">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                            </button>
+                            <button class="btn">
+                                <i class="fa fa-download" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="hide-before-m col-m-2 col-l-2 padding text-xs-right">
-                        2MB
-                    </div>
-                    <div class="col-xs-3 col-m-2 col-l-2 padding text-xs-right">
-                        2017.09.09
-                    </div>
-                    <div class="col-xs-3 col-m-2 col-l-3 padding text-xs-right">
-                        <button class="btn">
-                            <i class="fa fa-cog" aria-hidden="true"></i>
-                        </button>
-                        <button class="btn">
-                            <i class="fa fa-download" aria-hidden="true"></i>
-                        </button>
+
+                    <div class="col-xs-12 flex middle-xs file-detail-edit m-r m-l m-b">
+                        <div class="col-xs-12 col-m-8">
+                            <p>Nazwa pliku:</p>
+                            <input type="text" class="input" placeholder="Nazwa pliku.jpg">
+
+                            <ul class="no-style m-t">
+                                <div class="name">Wygasa po:</div>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="expires" value="promotion" class="edit-type">
+                                        <input type="date" name="bday" min="2017-01-02">
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="expires" value="product_promotion" class="edit-type">
+                                        Plik nie wygasa
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-m-4 flex flex-xs-direction-row flex-m-direction-column middle-xs">
+                            <button class="btn" class="button-cancel">
+                                Cofnij
+                            </button>
+                            <button class="btn" class="button-save">
+                                Zapisz
+                            </button>
+                            <button class="btn btn-danger" class="button-delete">
+                                Usuń
+                            </button>
+                            <button class="btn btn-danger" class="button-delete-confirm">
+                                Potwierdź usunięcie
+                            </button>
+                            <button class="btn" class="button-delete-cancel">
+                                Anuluj usunięcie
+                            </button>
+                        </div>
                     </div>
                 </div>
+
+
 
                 <div class="row nowrap-xs middle-xs">
                     <div class="col-xs-6 col-m-6 col-l-5 padding">

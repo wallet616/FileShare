@@ -1127,4 +1127,38 @@ hr {
   padding: 0.5em 0.1em 0.3em 0.1em;
   font-size: 0.7em; }
 
+.list,
+ul {
+  flex-basis: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 0em 0em 0.4em 0em;
+  padding: 0.1em 0.5em;
+  font-size: 1em; }
+  .list:first-child,
+  ul:first-child {
+    margin-top: 0.4em; }
+  .list > li,
+  ul > li {
+    list-style: none;
+    padding: 0.2em 0em 0.2em 0.5em; }
+    .list > li:first-child,
+    ul > li:first-child {
+      margin-top: 0.0em; }
+    .list > li:last-child,
+    ul > li:last-child {
+      margin-bottom: 0.0em; }
+    .list > li::before,
+    ul > li::before {
+      content: "\f105";
+      display: inline-block;
+      font-family: "FontAwesome";
+      color: white;
+      padding-right: 0.5em; }
+  .list.no-style > li::before,
+  ul.no-style > li::before {
+    display: none; }
+
 /*# sourceMappingURL=global.css.map */
