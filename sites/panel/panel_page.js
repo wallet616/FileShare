@@ -13,6 +13,8 @@ module.exports.handle = function(req, res) {
         return;
     }
 
+    req.session.logged = true;
+
 
     // Send the site.
     var source = fs.readFileSync(__dirname + "/" + "panel_page.html", "utf8");

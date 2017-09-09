@@ -19,10 +19,11 @@ var port = 61611;
 app.use(session({
     secret: "session",
     cookie: {
-        maxAge: 86400
+        maxAge: 86400000
     },
+    saveUninitialized: false,
     resave: true,
-    saveUninitialized: true
+    rolling: true,
 }));
 
 ///////////////////////////////////////////////////

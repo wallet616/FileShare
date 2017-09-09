@@ -78,3 +78,51 @@ footer {
 .download-space {
     @extend .footer-space;
 }
+
+.download-preview {
+    display: inline-block;
+    .fa {
+        font-size: 4em;
+        margin: 0.3em;
+    }
+}
+
+.btn {
+    .btn-left-ico {
+        padding: 0.05em 0.3em 0.05em 0.0em;
+    }
+}
+
+hr {
+    padding: 0em;
+    margin: 0em 0em 0em 0em;
+    display: block;
+    border: none;
+    border-bottom: 1px solid mix($color-default, $color-mix, 70);
+}
+
+.table {
+    &.table-stripped {
+        &>*:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    }
+}
+
+@each $name,
+$size in $screen-sizes {
+    //////////////////////////////
+    // Hide:
+    @media screen and (max-width: #{$size - 1px}) {
+        .hide-before-#{$name} {
+            display: none !important;
+        }
+    }
+}
+
+.files-list {
+    .arrow {
+        padding: 0.5em 0.1em 0.3em 0.1em;
+        font-size: 0.7em;
+    }
+}

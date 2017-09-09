@@ -43,7 +43,7 @@
                 <div class="col-xs-12 col-m-4 col-l-4 col-xl-3">
                     <img class="logo" src="/img/logo-200x200.png" />
                 </div>
-                <div class="logo-description col-xs-12 text-xs-center">
+                <div class="logo-description col-xs-12 text-xs-center m-b">
                     File Share
                 </div>
             </div>
@@ -51,8 +51,80 @@
     </nav>
 
     <!-- Site content -->
-    <div class="container">
-        <h1>Panel</h1>
+    <div class="container p-t p-b">
+
+        <div class="panel">
+            <p>Akcje globalne</p>
+
+            <div class="p-r p-l p-b">
+                <label for="edit-file">
+                    <div class="btn"><i class="fa fa-cloud-upload btn-left-ico"></i>Wybierz plik</div>
+                </label>
+                <input id="edit-file" type="file" class="hide">
+            </div>
+        </div>
+
+
+
+        <div class="row left-xs panel files-list">
+            <div class="col-xs-6 col-m-6 col-l-5 padding">
+                Nazwa <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>
+            </div>
+            <div class="hide-before-m col-m-2 col-l-2 padding text-xs-right">
+                Wielkość <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>
+            </div>
+            <div class="col-xs-3 col-m-2 col-l-2 padding text-xs-right">
+                Data <i class="fa fa-arrow-down arrow" aria-hidden="true"></i>
+            </div>
+            <div class="col-xs-3 col-m-2 col-l-3 padding text-xs-right">
+                Opcje
+            </div>
+            <hr class="width-100">
+
+            <div class="table table-stripped width-100">
+                <div class="row nowrap-xs middle-xs">
+                    <div class="col-xs-6 col-m-6 col-l-5 padding">
+                        Naprawde długa nazwa jakiegoś pliku.jpg
+                    </div>
+                    <div class="hide-before-m col-m-2 col-l-2 padding text-xs-right">
+                        2MB
+                    </div>
+                    <div class="col-xs-3 col-m-2 col-l-2 padding text-xs-right">
+                        2017.09.09
+                    </div>
+                    <div class="col-xs-3 col-m-2 col-l-3 padding text-xs-right">
+                        <button class="btn">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row nowrap-xs middle-xs">
+                    <div class="col-xs-6 col-m-6 col-l-5 padding">
+                        Nazwa pliku.jpg
+                    </div>
+                    <div class="hide-before-m col-m-2 col-l-2 padding text-xs-right">
+                        2MB
+                    </div>
+                    <div class="col-xs-3 col-m-2 col-l-2 padding text-xs-right">
+                        2017.09.09
+                    </div>
+                    <div class="col-xs-3 col-m-2 col-l-3 padding text-xs-right">
+                        <button class="btn">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <!-- Cookies alert module -->

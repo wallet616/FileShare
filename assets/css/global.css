@@ -1089,4 +1089,42 @@ footer {
   padding-left: 3em;
   padding-right: 3em; }
 
+.download-preview {
+  display: inline-block; }
+  .download-preview .fa {
+    font-size: 4em;
+    margin: 0.3em; }
+
+.btn .btn-left-ico {
+  padding: 0.05em 0.3em 0.05em 0.0em; }
+
+hr {
+  padding: 0em;
+  margin: 0em 0em 0em 0em;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #b5b5b5; }
+
+.table.table-stripped > *:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.8); }
+
+@media screen and (max-width: -1px) {
+  .hide-before-xs {
+    display: none !important; } }
+@media screen and (max-width: 374px) {
+  .hide-before-s {
+    display: none !important; } }
+@media screen and (max-width: 767px) {
+  .hide-before-m {
+    display: none !important; } }
+@media screen and (max-width: 1023px) {
+  .hide-before-l {
+    display: none !important; } }
+@media screen and (max-width: 1439px) {
+  .hide-before-xl {
+    display: none !important; } }
+.files-list .arrow {
+  padding: 0.5em 0.1em 0.3em 0.1em;
+  font-size: 0.7em; }
+
 /*# sourceMappingURL=global.css.map */
