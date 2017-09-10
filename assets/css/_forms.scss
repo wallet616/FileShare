@@ -100,6 +100,7 @@
 .input {
     display: inline-block;
     width: 100%;
+    line-height: 1.25em;
     font-size: $forms-font-size;
     padding: 0.4em 0.6em 0.4em 0.6em;
     position: relative;
@@ -133,9 +134,14 @@
     }
 }
 
+.input[type="date"] {
+    padding: 0.27em 0.6em;
+}
+
 .input-addon {
     display: inline-block;
     width: 100%;
+    line-height: 1.3em;
     font-size: $forms-font-size;
     padding: 0.37em 0.6em 0.4em 0.6em;
     position: relative;
