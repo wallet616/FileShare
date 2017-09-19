@@ -32,11 +32,11 @@ app.use(cookieParser());
 
 ///////////////////////////////////////////////////
 // Parse body application/x-www-form-urlencoded:
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ reviver: true, extended: false, limit: "1gb" }));
 
 ///////////////////////////////////////////////////
 // Parse body application/json:
-app.use(bodyParser.json())
+app.use(bodyParser.json({ reviver: true, extended: false, limit: "1gb" }))
 
 
 ///////////////////////////////////////////////////

@@ -20,6 +20,7 @@
     <script src="/js/uniscale-alert.js"></script>
     <script src="/js/AnimatedBackground.js"></script>
     <script src="/js/cookies_alert.js"></script>
+    <script src="/js/download.js"></script>
 
 </head>
 
@@ -52,34 +53,23 @@
     <div class="container">
         <div class="flex flex-xs-direction-column middle-xs m-t m-b">
             <div class="file-name">
-                <h2>Nazwa_pliku.jpg</h2>
+                <h2>{file_name}</h2>
             </div>
             <div class="col-xs-12 m-b">
-                <button class="btn">Pobierz</button>
+                <button class="btn download-button" data-id="{file_id}">Pobierz</button>
                 <button class="btn" data-toogle="tooltip">Informacje
                     <div class="tooltip text-xs-left">
-                        Wielkość pliku: <b>2MB</b><br>
-                        Wygasa: <b>08.09.2017 16:51</b>
+                        Wielkość pliku: <b>0MB</b><br>
+                        Wygasa: <b>{expires_date}</b>
                     </div>
                 </button>
             </div>
         </div>
     </div>
 
-    <div class="width-100 padding text-xs-center">
-        <div class="panel padding download-preview">
-            <img src="/img/1495267466416.jpg" />
-        </div>
-    </div>
+    {preview}
 
-    <div class="width-100 padding text-xs-center">
-        <div class="panel padding download-preview">
-            <i class="fa fa-file-o" aria-hidden="true"></i>
-            <div class="download-preview-description">
-                Podgląd niedostępny
-            </div>
-        </div>
-    </div>
+
 
     <!-- Cookies alert module -->
     {cookies_alert}

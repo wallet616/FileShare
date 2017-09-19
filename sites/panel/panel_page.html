@@ -20,6 +20,7 @@
     <script src="/js/uniscale-alert.js"></script>
     <script src="/js/AnimatedBackground.js"></script>
     <script src="/js/cookies_alert.js"></script>
+    <script src="/js/file_upload.js"></script>
 
 </head>
 
@@ -72,7 +73,7 @@
                         </div>
                     </div>
                     <div class="col-xs-max">
-                        <input type="text" class="input" placeholder="Nazwa pliku">
+                        <input type="text" class="input" placeholder="Nazwa pliku" id="new_file_name">
                     </div>
                 </div>
             </div>
@@ -86,12 +87,12 @@
                         </div>
                     </div>
                     <div class="col-xs-max">
-                        <input class="input" type="date" name="expires-date" min="2017-01-02">
+                        <input class="input" type="date" name="expires-date" id="new_file_expires_date" min="2017-01-02">
                     </div>
                 </div>
                 <div class="col-xs-12 col-m-6 p-l p-r">
-                    <input class="styled-checkbox" name="expires-never" id="expires-1" type="checkbox">
-                    <label for="expires-1">Plik nie wygasa</label>
+                    <input class="styled-checkbox" name="expires-never" id="new_file_expires_never" type="checkbox">
+                    <label for="new_file_expires_never">Plik nie wygasa</label>
                 </div>
             </div>
 
@@ -124,31 +125,31 @@
             </div>
             <hr class="width-100">
 
-            <div class="table table-stripped width-100">
+            <div class="table table-stripped width-100" id="files_list">
 
 
-                <div class="row">
+                <div class="row" data-id="{file_id}">
                     <div class="row nowrap-xs middle-xs">
                         <div class="col-xs-6 col-m-6 col-l-5 padding">
-                            Naprawde długa nazwa jakiegoś pliku.jpg
+                            {file_name}
                         </div>
                         <div class="hide-before-m col-m-2 col-l-2 padding text-xs-right">
-                            2MB
+                            0MB
                         </div>
                         <div class="col-xs-3 col-m-2 col-l-2 padding text-xs-right">
-                            2017.09.09
+                            {time_expires}
                         </div>
                         <div class="col-xs-3 col-m-2 col-l-3 padding text-xs-right">
-                            <button class="btn">
+                            <button class="btn more-element-details">
                                 <i class="fa fa-cog" aria-hidden="true"></i>
                             </button>
-                            <button class="btn">
+                            <button class="btn element-download">
                                 <i class="fa fa-download" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div class="col-xs-12 flex middle-xs file-detail-edit m-r m-l m-b">
+                    <div class="col-xs-12 flex middle-xs file-detail-edit m-r m-l m-b hide">
                         <div class="col-xs-12 col-m-8">
                             <div class="flex p-r p-l p-b">
                                 <div class="col-xs-12 flex nowrap-xs">
@@ -158,7 +159,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-max">
-                                        <input type="text" class="input" placeholder="Nazwa pliku">
+                                        <input type="text" class="input" placeholder="Nazwa pliku" value="{file_name_val}">
                                     </div>
                                 </div>
                             </div>
@@ -172,11 +173,11 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-max">
-                                        <input class="input" type="date" name="expires-date" min="2017-01-02">
+                                        <input class="input" type="date" name="expires-date" min="2017-01-02" value="{time_expires_value}">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-m-6 p-l p-r">
-                                    <input class="styled-checkbox" name="expires-never" id="expires-1" type="checkbox">
+                                    <input class="styled-checkbox" name="expires-never" id="expires-1" type="checkbox" {expires_never}>
                                     <label for="expires-1">Plik nie wygasa</label>
                                 </div>
                             </div>
@@ -202,26 +203,6 @@
                 </div>
 
 
-
-                <div class="row nowrap-xs middle-xs">
-                    <div class="col-xs-6 col-m-6 col-l-5 padding">
-                        Nazwa pliku.jpg
-                    </div>
-                    <div class="hide-before-m col-m-2 col-l-2 padding text-xs-right">
-                        2MB
-                    </div>
-                    <div class="col-xs-3 col-m-2 col-l-2 padding text-xs-right">
-                        2017.09.09
-                    </div>
-                    <div class="col-xs-3 col-m-2 col-l-3 padding text-xs-right">
-                        <button class="btn">
-                            <i class="fa fa-cog" aria-hidden="true"></i>
-                        </button>
-                        <button class="btn">
-                            <i class="fa fa-download" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
 

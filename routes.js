@@ -37,7 +37,7 @@ module.exports = function(app) {
     ///////////////////////////////////////////////////
     // Download page & ajax:
     app.get("/download", download_page.handle);
-    app.post("/ajax/download", download_page.ajax);
+    app.get("/ajax/download", download_page.ajax);
 
 
 
