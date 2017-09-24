@@ -33,7 +33,10 @@ function base64_to_array_buffer(base64) {
 
 $(document).ready(function() {
     $(".download-button").click(function() {
+        if (download_started) return;
+
         var id = $(this).data("id");
+        download_started = true;
 
         $.ajax({
             method: "GET",
@@ -42,7 +45,6 @@ $(document).ready(function() {
             },
             url: "/ajax/download",
             success: function(response) {
-                console.log(response);
                 var originaldata = base64_to_array_buffer(response.data);
                 download(originaldata, response.name, 'text/plain');
             },

@@ -8,13 +8,14 @@ const footer = require("../../modules/footer/footer");
 module.exports.files_list = {};
 load_files_to_cache();
 
-function File_element(id, name, expires, never_exipres, path) {
+function File_element(id, name, expires, never_exipres, path, size) {
     return {
         id: id,
         name: name,
         expires: expires,
         never_exipres: never_exipres,
-        path: path
+        path: path,
+        size: size
     }
 }
 
@@ -41,6 +42,17 @@ module.exports.handle = function(req, res) {
     res.send(source);
 }
 
+module.exports.delete_file = function(id) {
+    if (module.exports.files_list[id]) {
+        fs.unlinkSync(module.exports.files_list[id].path);
+        delete module.exports.files_list[id];
+
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
 module.exports.ajax = function(req, res) {
     var response = {};
@@ -57,14 +69,23 @@ module.exports.ajax = function(req, res) {
         req.body.id = new_file_id;
         var new_path = __dirname + "/../../files/" + req.body.id + ".json";
 
+        var new_size = Buffer.byteLength(req.body.data, "base64");
+        req.body.size = new_size;
         fs.writeFileSync(new_path, JSON.stringify(req.body), "utf8");
 
-        var new_element = File_element(req.body.id, req.body.name, req.body.expire_date, req.body.expire_never, new_path);
+        var new_element = File_element(req.body.id, req.body.name, req.body.expire_date, req.body.expire_never, new_path, new_size);
 
         module.exports.files_list[req.body.id] = new_element;
     } else if (req.body.command == "get_list") {
 
         response.data = module.exports.files_list;
+
+    } else if (req.body.command == "delete") {
+        if (module.exports.delete_file(req.body.id)) {
+            response.status = "OK";
+        } else {
+            response.status = "NO_OK";
+        }
 
     } else {
         response.status = "NO_OK";
@@ -82,7 +103,7 @@ function register_files(list_of_paths) {
         var f = fs.readFileSync(new_path, "utf8");
         f = JSON.parse(f);
 
-        var new_element = File_element(f.id, f.name, f.expire_date, f.expire_never, new_path);
+        var new_element = File_element(f.id, f.name, f.expire_date, f.expire_never, new_path, f.size);
         module.exports.files_list[f.id] = new_element;
     }
 }

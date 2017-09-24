@@ -134,7 +134,7 @@
                             {file_name}
                         </div>
                         <div class="hide-before-m col-m-2 col-l-2 padding text-xs-right">
-                            0MB
+                            {size}MB
                         </div>
                         <div class="col-xs-3 col-m-2 col-l-2 padding text-xs-right">
                             {time_expires}
@@ -143,7 +143,7 @@
                             <button class="btn more-element-details">
                                 <i class="fa fa-cog" aria-hidden="true"></i>
                             </button>
-                            <button class="btn element-download">
+                            <button class="btn element-link-to-download">
                                 <i class="fa fa-download" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -192,11 +192,14 @@
                             <button class="btn btn-danger button-delete">
                                 Usuń
                             </button>
-                            <button class="btn btn-danger button-delete-confirm">
+                            <button class="btn btn-danger button-delete-confirm hide">
                                 Potwierdź usunięcie
                             </button>
-                            <button class="btn button-delete-cancel">
+                            <button class="btn button-delete-cancel hide">
                                 Anuluj usunięcie
+                            </button>
+                            <button class="btn btn-info button-download">
+                                Pobierz
                             </button>
                         </div>
                     </div>

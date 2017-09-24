@@ -21,10 +21,12 @@ module.exports.handle = function(req, res) {
         source = source.replace("{cookies_alert}", new_cookies_alert);
 
         var new_footer = footer.get(req, res);
-        var expires_text = (resource.never_exipres) ? "nigdy" : resource.expires;
+        var expires_text = (resource.never_exipres == "true") ? "nigdy" : resource.expires;
+        var new_size = parseFloat(resource.size / 1000000).toFixed(2);
         source = source
             .replace("{footer}", new_footer)
             .replace("{preview}", preview)
+            .replace("{size}", new_size)
             .replace("{file_name}", resource.name)
             .replace("{file_id}", resource.id)
             .replace("{expires_date}", expires_text);
