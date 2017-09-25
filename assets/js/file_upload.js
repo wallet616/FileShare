@@ -26,6 +26,7 @@ $(document).ready(function() {
     $("#files_list").on("click", ".button-cancel", cancel_button);
     $("#files_list").on("click", ".button-download", download_button);
     $("#files_list").on("click", ".element-link-to-download", copy_link_to_download);
+    $("#files_list").on("click", ".button-save", save_button);
 
     refresh_upload_information();
     refresh_list();
@@ -223,6 +224,46 @@ function file_to_upload_listener() {
     }
 }
 
+function save_button() {
+    if (!current_expanded) return;
+
+    var id = current_expanded.data("id");
+    var new_name = current_expanded.find(".element_file_name").val();
+    var new_expires = current_expanded.find(".element_file_expires").val();
+    var new_expires_never = current_expanded.find(".element_file_expires_never").prop("checked");
+
+    $.ajax({
+        method: "POST",
+        url: "/ajax/panel",
+        dataType: 'json',
+        data: {
+            command: "change",
+            id: id,
+            name: new_name,
+            expires: new_expires,
+            expires_never: new_expires_never
+        },
+        beforeSend: function() {
+            file_to_upload_lock = true;
+        },
+        success: function(response) {
+            ALERT.push(ALERT_TYPE.SUCCESS, "Sukces", "Dane pliku zmienione pomyślnie.");
+
+            file_to_upload_lock = false;
+            cancel_upload_button();
+            refresh_list();
+        },
+        error: function(response) {
+            ALERT.push(ALERT_TYPE.DANGER, "Błąd serwera", "Nie można zmienić danych pliku pliku.");
+            console.error(response);
+
+            file_to_upload_lock = false;
+            cancel_upload_button();
+        }
+    });
+}
+
+
 function refresh_upload_information() {
     $("#new_file_name").val(file_to_upload.name);
     $("#new_file_expires_never").prop("checked", file_to_upload.expire_never);
@@ -286,14 +327,16 @@ function display_list(list) {
 
     for (var i in list) {
         var expires = (list[i].never_exipres == "true") ? "nigdy" : list[i].expires;
+        var expires_checkbox = (list[i].never_exipres == "true") ? "checked" : "";
         var new_size = parseFloat(list[i].size / 1000000).toFixed(2);
 
         var new_item = list_element_view
-            .replace("{file_id}", list[i].id)
+            .replace(/{file_id}/g, list[i].id)
             .replace("{file_name}", list[i].name)
             .replace("{size}", new_size)
             .replace("{file_name_val}", list[i].name)
             .replace("{time_expires}", expires)
+            .replace("{expires_never}", expires_checkbox)
             .replace("{time_expires_value}", list[i].expires);
 
         new_list += new_item;

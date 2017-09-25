@@ -159,7 +159,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-max">
-                                        <input type="text" class="input" placeholder="Nazwa pliku" value="{file_name_val}">
+                                        <input type="text" class="input element_file_name" placeholder="Nazwa pliku" value="{file_name_val}">
                                     </div>
                                 </div>
                             </div>
@@ -173,12 +173,12 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-max">
-                                        <input class="input" type="date" name="expires-date" min="2017-01-02" value="{time_expires_value}">
+                                        <input class="input element_file_expires" type="date" name="expires-date" min="2017-01-02" value="{time_expires_value}">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-m-6 p-l p-r">
-                                    <input class="styled-checkbox" name="expires-never" id="expires-1" type="checkbox" {expires_never}>
-                                    <label for="expires-1">Plik nie wygasa</label>
+                                    <input class="styled-checkbox element_file_expires_never" name="expires-never" id="expires-{file_id}" type="checkbox" {expires_never}>
+                                    <label for="expires-{file_id}">Plik nie wygasa</label>
                                 </div>
                             </div>
                         </div>

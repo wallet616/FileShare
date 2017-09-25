@@ -30,27 +30,7 @@ body {
     color: $font-primary;
     //////////////////////////////
     // XS:
-    font-size: 18px;
-    //////////////////////////////
-    // S:
-    @media screen and (min-width: $screen-s-min) {
-        font-size: 19px;
-    }
-    //////////////////////////////
-    // M:
-    @media screen and (min-width: $screen-m-min) {
-        font-size: 20px;
-    }
-    //////////////////////////////
-    // L:
-    @media screen and (min-width: $screen-l-min) {
-        font-size: 21px;
-    }
-    //////////////////////////////
-    // XL:
-    @media screen and (min-width: $screen-xl-min) {
-        font-size: 22px;
-    }
+    font-size: 19px;
 }
 
 /////////////////////////////////////////////////////////

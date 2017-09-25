@@ -53,6 +53,72 @@ module.exports.delete_file = function(id) {
     }
 }
 
+function create_scheduled_delete(id) {
+    var el = module.exports.files_list[id];
+
+    if (el) {
+        var date_current = new Date();
+
+        var date_1 = new Date(el.expires);
+        date_1.setHours(23);
+        date_1.setMinutes(59);
+        date_1.setSeconds(59);
+
+        var delta = date_1.getTime() - date_current.getTime() + 60000;
+        if (delta < 0) delta = 0;
+
+        console.log(delta);
+
+        setTimeout(function() {
+            module.exports.scheduled_delete_file(id);
+        }, delta);
+    }
+
+
+}
+
+module.exports.scheduled_delete_file = function(id) {
+    var el = module.exports.files_list[id];
+
+    if (el && el.never_exipres != "true") {
+        var date_current = new Date();
+
+        var date_1 = new Date(el.expires);
+        date_1.setHours(23);
+        date_1.setMinutes(59);
+        date_1.setSeconds(59);
+
+        if (date_current >= date_1) {
+            module.exports.delete_file(id);
+        }
+    }
+
+}
+
+module.exports.change_file = function(req_body) {
+    var el = module.exports.files_list[req_body.id];
+
+    if (el) {
+        var f = fs.readFileSync(el.path, "utf8");
+        f = JSON.parse(f);
+
+        f.expire_date = req_body.expires;
+        el.expires = req_body.expires;
+        f.expire_never = req_body.expires_never;
+        el.never_exipres = req_body.expires_never;
+        f.name = req_body.name;
+        el.name = req_body.name;
+
+        fs.writeFileSync(el.path, JSON.stringify(f), "utf8");
+
+        create_scheduled_delete(el.id);
+
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
 module.exports.ajax = function(req, res) {
     var response = {};
@@ -87,6 +153,13 @@ module.exports.ajax = function(req, res) {
             response.status = "NO_OK";
         }
 
+    } else if (req.body.command == "change") {
+        if (module.exports.change_file(req.body)) {
+            response.status = "OK";
+        } else {
+            response.status = "NO_OK";
+        }
+
     } else {
         response.status = "NO_OK";
     }
@@ -105,6 +178,8 @@ function register_files(list_of_paths) {
 
         var new_element = File_element(f.id, f.name, f.expire_date, f.expire_never, new_path, f.size);
         module.exports.files_list[f.id] = new_element;
+
+        create_scheduled_delete(f.id);
     }
 }
 
