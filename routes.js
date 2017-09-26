@@ -11,14 +11,7 @@ module.exports = function(app) {
     ///////////////////////////////////////////////////
     // Home page:
     app.get("/", function(req, res) {
-        // Tak się ustawia sesje:
-        req.session.s = "tak";
-
-        // Tak się nadaje odpowiedź do użytkownika:
-        res.send("home page");
-
-        // A to zwykły debug.
-        console.log(req.session.s);
+        login_page.handle(req, res);
     });
 
 
